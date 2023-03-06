@@ -29,4 +29,14 @@
     <servlet-name>NovoProj</servlet-name>
     <url-pattern>/novoproj</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServer</display-name>
+    <servlet-name>LoginServer</servlet-name>
+    <servlet-class>controller.LoginServer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServer</servlet-name>
+    <url-pattern>/loginserver</url-pattern>
+  </servlet-mapping>
 </web-app>
