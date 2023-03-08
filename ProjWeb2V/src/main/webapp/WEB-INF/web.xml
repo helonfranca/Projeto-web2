@@ -39,4 +39,14 @@
     <servlet-name>LoginServer</servlet-name>
     <url-pattern>/loginserver</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListaProjetos</display-name>
+    <servlet-name>ListaProjetos</servlet-name>
+    <servlet-class>controller.ListaProjetos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListaProjetos</servlet-name>
+    <url-pattern>/listaprojetos</url-pattern>
+  </servlet-mapping>
 </web-app>

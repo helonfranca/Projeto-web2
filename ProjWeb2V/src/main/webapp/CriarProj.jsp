@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
     
 <!DOCTYPE html>
@@ -22,12 +22,12 @@
 
         <!--MENU-->
         <div class="MENU">
-            <div class="item1_menu"><a href="CriarProj.jsp">Criar novo projeto</a></div>
-            <div class="item2_menu"><a href="listaalunos.html">Listar alunos</a></div>  
-            <div class="item3_menu"><a href="novoaluno.html">Incluir novo aluno</a></div>
-            <div class="item4_menu"><a href="novasatividades.html">Incluir novas atividades</a></div>
-            <div class="item5_menu"><a href="notificacoes.html">NotificaÃ§Ãµes</a></div>
-            <div class="item6_menu"><a href="novoproj.html">Criar novo projeto</a></div>
+                <div class="item1_menu"><a href="relatorios.html"></a></div>
+            <div class="item2_menu"><a href="listaprojetos">Listar projetos</a></div>  
+            <div class="item3_menu"><a href="novoaluno.html">EncerrarParticipação</a></div>
+            <div class="item4_menu"><a href="novasatividades.html">Enviar Documentos</a></div>
+            <div class="item5_menu"><a href="notificacoes.html">Enviar Horas</a></div>
+            <div class="item6_menu"><a href="CriarProj.jsp">Criar novo projeto</a></div>
             </div>
 
 
@@ -47,7 +47,7 @@
                     </div>
                     
                     <div>
-                        <input class="butao" type="submit" value="Enviar" ">
+                        <input class="butao" type="submit" value="Enviar">
                     </div>
             </form>     
 

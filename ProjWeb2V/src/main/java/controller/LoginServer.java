@@ -42,7 +42,7 @@ public class LoginServer extends HttpServlet {
 				n=n+1;			
 				if(senhaLogin.equals(Dados.getKey())) {
 					request.setAttribute("usuario", nomeLogin);
-					  RequestDispatcher xx = request.getRequestDispatcher("/bemvindo.jsp");
+					  RequestDispatcher xx = request.getRequestDispatcher("/CriarProj.jsp");
 					     xx.forward(request, response);
 					//out.println("<h1>Olá " + nomeLogin + "!</h1>"); 	
 					     
@@ -55,7 +55,7 @@ public class LoginServer extends HttpServlet {
 		
 		if(n==0) {
 			System.out.println("o valor de n é" + n);
-			 RequestDispatcher xx = request.getRequestDispatcher("/Logincadastro.jsp");
+			 RequestDispatcher xx = request.getRequestDispatcher("/CadastroLogin.jsp");
 		     xx.forward(request, response);	
 			
 		}

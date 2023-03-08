@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
 
 
@@ -16,8 +16,8 @@
         <div class="container">
             <div class = "logo">
                 <div class="dentro_logo">
-                    <img style="height:150px; width:150px;" src="logo.png">
-                    <p id="titulo"> Portal <br> Projeto de <br> Extens√£o</p>
+                   
+                    <p id="titulo"> Portal <br> Projeto de <br> Extens„o</p>
                     
                 </div>
             </div>
@@ -31,6 +31,7 @@
 		                    <div>Usuario:
 		                    <input type="text" id="login" name="login">
 		                    </div>
+		                    </br>
 		                    <div>Senha:
 		                    <input type="password" id="pass" name="password">
 		                    </div>

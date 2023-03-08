@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import model.Banco;
+import model.Usuario;
 
 
 
@@ -27,11 +28,20 @@ public class LoginCadastroServer extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeLogin = request.getParameter("nome");
 		String senhaLogin = request.getParameter("senha");		
+		String emailLogin = request.getParameter("email");
+		String Login = request.getParameter("login");	
 		
 		Banco banco = new  Banco();
-		banco.addmapa(senhaLogin, nomeLogin);
+		banco.addmapa(senhaLogin, Login);
+		Usuario usuario = new Usuario();
+		usuario.setNome( nomeLogin);
+		usuario.setEmail(emailLogin);
+		usuario.setLogin(Login);
+		usuario.setSenha(senhaLogin);
 		
-		HashMap<String, String> mapDados = banco.getDados();
+		banco.adicionaUsuario(usuario);
+		
+		 HashMap<String, String> mapDados = banco.getDados();
 		
 		for (Entry<String, String> Dados : mapDados.entrySet()) {
 		     System.out.println(Dados); 

@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Usuario {
+public class Usuario {
 	
 	private Integer id_usuario;
 	private String nome;
