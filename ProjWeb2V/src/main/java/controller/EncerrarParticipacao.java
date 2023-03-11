@@ -37,10 +37,11 @@ public class EncerrarParticipacao extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(true);
-
+		
+		
 		Aluno nome = (Aluno) session.getAttribute("user");
 		Banco banco = new Banco();
-		List<ParticipacaoProjeto> lista = banco.getProjetos();
+		
 		
 		
 		

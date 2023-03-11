@@ -24,14 +24,25 @@ public class LoginServer extends HttpServlet {
 		
 		dados.adddata();
 		
-		for(int i = 0; i < dados.aluno.size(); i++) {	
-			if(request.getParameter("login").equals(dados.aluno.get(i).getLogin())) {
-				if(request.getParameter("password").equals(dados.aluno.get(i).getSenha())) {
-					session.setAttribute("user", dados.aluno.get(i));
-				    String url = response.encodeRedirectURL("/ProjWeb2V/CriarProj.jsp");
+		for(int i = 0; i < dados.coordenacao.size(); i++) {	
+			if(request.getParameter("login").equals(dados.coordenacao.get(i).getLogin())) {
+				if(request.getParameter("password").equals(dados.coordenacao.get(i).getSenha())) {
+					session.setAttribute("user", dados.coordenacao.get(i));
+				    String url = response.encodeRedirectURL("/ProjWeb2V/ListarProjetoCoord.jsp");
 					response.setStatus(302);
 					response.setHeader("location", url);
 					
+				}
+			}
+			for(int j = 0; j < dados.coordenacao.size(); j++) {
+				if(request.getParameter("login").equals(dados.aluno.get(j).getLogin())) {
+					if(request.getParameter("password").equals(dados.aluno.get(j).getSenha())) {
+						session.setAttribute("user", dados.aluno.get(j));
+					    String url = response.encodeRedirectURL("/ProjWeb2V/CriarProj.jsp");
+						response.setStatus(302);
+						response.setHeader("location", url);
+					
+					}
 				}
 			}
 			
