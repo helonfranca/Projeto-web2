@@ -5,6 +5,11 @@ public class Coordenacao extends Usuario{
 	private String matricula_siape;
 	private Boolean ContaAtiva = true; 
 	
+	public Coordenacao(String nome, String login, String senha) {
+		super(nome, login, senha);
+		// TODO Auto-generated constructor stub
+	}
+	
 	public String getMatricula_siape() {
 		return matricula_siape;
 	}

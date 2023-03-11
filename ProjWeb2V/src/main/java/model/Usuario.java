@@ -7,6 +7,13 @@ public class Usuario {
 	private String login;
 	private String senha;	
 	private String email;
+	
+	public Usuario(String nome, String login, String senha) {
+		super();
+		this.nome = nome;
+		this.login = login;
+		this.senha = senha;
+	}
 		
 	public Integer getId_usuario() {
 		return id_usuario;

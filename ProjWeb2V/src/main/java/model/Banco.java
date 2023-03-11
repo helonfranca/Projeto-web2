@@ -6,7 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Banco{
-
+	public ArrayList<Aluno> aluno = new ArrayList<>();
+	public ArrayList<Coordenacao> coordenacao = new ArrayList<>();
 	private static List <Aluno> listaAlunos = new ArrayList<>();
 	private static List <Usuario> listaUsuarios = new ArrayList<>();
 	private static List <ParticipacaoProjeto> listaProj = new ArrayList<>();
@@ -52,9 +53,21 @@ public class Banco{
 			return Banco.map;
 	
 	}
+	 
+	 public void adddata() {
+			Aluno aluno1 = new Aluno("lucas", "lucas123", "123");
+			Aluno aluno2 = new Aluno("milena", "milena123", "123");
+			aluno.add(aluno1);
+			aluno.add(aluno2);
+			
+			Coordenacao c1 = new Coordenacao("Cleber", "cleber123", "123");
+			Coordenacao c2 = new Coordenacao("Juliana", "juliana123", "123");
+			coordenacao.add(c1);
+			coordenacao.add(c2);
+		}
+	 
+	
 		
-		 
-
 	
 	
 }

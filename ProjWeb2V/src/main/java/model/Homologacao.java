@@ -1,20 +1,13 @@
 package model;
 
-import java.util.Calendar;
-
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import java.util.TimeZone;
-
 public class Homologacao {
 
 	private Integer id_homologacao;	
 	private Coordenacao homologador;
 	private Aluno aluno;
-	private Calendar timestamp_homologacao = new GregorianCalendar(TimeZone.getTimeZone("GMT-3"),new Locale("pt_BR"));
+	private String timestamp_homologacao;
 	private Documento documentacao_comprobatoria;
 	private ParticipacaoProjeto participacao_relacionada;
-	
 	private Integer qtde_horas;
 	
 	public Integer getId_homologacao() {
@@ -41,11 +34,11 @@ public class Homologacao {
 		this.aluno = aluno;
 	}
 
-	public Calendar getTimestamp_homologacao() {
+	public String getTimestamp_homologacao() {
 		return timestamp_homologacao;
 	}
 
-	public void setTimestamp_homologacao(Calendar timestamp_homologacao) {
+	public void setTimestamp_homologacao(String timestamp_homologacao) {
 		this.timestamp_homologacao = timestamp_homologacao;
 	}
 

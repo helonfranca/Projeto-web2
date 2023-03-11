@@ -1,67 +1,52 @@
 package controller;
 
-import jakarta.servlet.RequestDispatcher;
+import java.io.IOException;
 import jakarta.servlet.ServletException;
-
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.Banco;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map.Entry;
 
-
-/**
- * Servlet implementation class LoginServer
- */
 public class LoginServer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nomeLogin = request.getParameter("login");
-		String senhaLogin = request.getParameter("password");
-
 		
-		Banco banco = new  Banco();
+		Banco dados = new Banco();
 		
-		HashMap<String, String> mapDados = banco.getDados();
+		System.out.println("Login: " + request.getParameter("login"));
+		System.out.println("Senha: " + request.getParameter("password"));
 		
-		//PrintWriter out = response.getWriter();
-		//out.println("<html><body>");
+		HttpSession session = request.getSession(true);
 		
-		int n;
-		n=0;
-
-		for (Entry<String, String> Dados : mapDados.entrySet()) {
-			
-			if(nomeLogin.equals(Dados.getValue())){
-				n=n+1;			
-				if(senhaLogin.equals(Dados.getKey())) {
-					request.setAttribute("usuario", nomeLogin);
-					  RequestDispatcher xx = request.getRequestDispatcher("/CriarProj.jsp");
-					     xx.forward(request, response);
-					//out.println("<h1>Olá " + nomeLogin + "!</h1>"); 	
-					     
-					}else {					
-					   RequestDispatcher xx = request.getRequestDispatcher("/Index.jsp");
-					     xx.forward(request, response);						 
-				}			
-		     }		
-		}
+		dados.adddata();
 		
-		if(n==0) {
-			System.out.println("o valor de n é" + n);
-			 RequestDispatcher xx = request.getRequestDispatcher("/CadastroLogin.jsp");
-		     xx.forward(request, response);	
+		for(int i = 0; i < dados.aluno.size(); i++) {	
+			if(request.getParameter("login").equals(dados.aluno.get(i).getLogin())) {
+				if(request.getParameter("password").equals(dados.aluno.get(i).getSenha())) {
+					session.setAttribute("user", dados.aluno.get(i));
+				    String url = response.encodeRedirectURL("/ProjWeb2V/CriarProj.jsp");
+					response.setStatus(302);
+					response.setHeader("location", url);
+					
+				}
+			}
 			
 		}
 		
 		
-			
+		//dados.aluno.stream()
+		 // .filter(aluno -> request.getParameter("login").equals(aluno.getLogin()))
+		  //.filter(aluno -> request.getParameter("password").equals(aluno.getSenha()))
+		 // .findFirst()
+		//  .ifPresent(aluno -> {
+		 //   session.setAttribute("Nome", aluno.getNome());
+		 //   String url = response.encodeRedirectURL("/CriarProj.jsp");
+		  //  response.setStatus(HttpServletResponse.SC_FOUND);
+		 //   response.setHeader("location", url);
+		 // });
 	}
-
 }

@@ -49,4 +49,14 @@
     <servlet-name>ListaProjetos</servlet-name>
     <url-pattern>/listaprojetos</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EncerrarParticipacao</display-name>
+    <servlet-name>EncerrarParticipacao</servlet-name>
+    <servlet-class>controller.EncerrarParticipacao</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EncerrarParticipacao</servlet-name>
+    <url-pattern>/EncerrarParticipacao</url-pattern>
+  </servlet-mapping>
 </web-app>

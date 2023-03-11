@@ -7,8 +7,12 @@ import java.util.List;
 public class Aluno extends Usuario{
 	
 	private String matricula;
-	private List<ParticipacaoProjeto> participacao_projetos = new ArrayList<ParticipacaoProjeto>();
+	static List<ParticipacaoProjeto> participacao_projetos = new ArrayList<ParticipacaoProjeto>();
 	
+	public Aluno(String nome, String login, String senha) {
+		super(nome, login, senha);
+		// TODO Auto-generated constructor stub
+	}
 	
 	public String getMatricula() {
 		return matricula;
@@ -19,7 +23,7 @@ public class Aluno extends Usuario{
 	}
 	
 	public boolean registrarParticipacaoProjeto(ParticipacaoProjeto pp) {
-		return this.participacao_projetos.add(pp);
+		return Aluno.participacao_projetos.add(pp);
 	}
 	
 	public boolean removerParticipacaoProjeto(ParticipacaoProjeto pp) {

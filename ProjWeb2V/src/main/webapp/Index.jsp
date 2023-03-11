@@ -16,7 +16,7 @@
         <div class="container">
             <div class = "logo">
                 <div class="dentro_logo">
-                   
+                    <img style="height:150px; width:150px;" src="logo.png">
                     <p id="titulo"> Portal <br> Projeto de <br> Extensão</p>
                     
                 </div>
@@ -24,27 +24,20 @@
            
             <div class="fora_login">
                 <div class="loginform">
-                     <h2>Faca seu Login</h2>
-                     
+                     <h2>Faça seu Login</h2>
                      <form action="loginserver" method="POST">                  
-                
-		                    <div>Usuario:
-		                    <input type="text" id="login" name="login">
+		                    <div>
+		                    	<h3>Usuario:</h3>
+		                    	<input type="text" id="login" name="login">
 		                    </div>
-		                    </br>
-		                    <div>Senha:
-		                    <input type="password" id="pass" name="password">
+		                    <br>
+		                    <div>
+		                    	<h3>Senha:</h3>
+		                    	<input type="password" id="pass" name="password">
 		                    </div>
 		                    <br></br>
-		                    
-		               			<button type="submit">Entrar</button>
+		               		<button type="submit">Entrar</button>
                		 </form> 
-               		
-                    <br></br>
-                    <a href = "CadastroLogin.jsp"><button>Criar nova conta</button></a> 
-                	
-                	  
-                    
                 </div>  
             </div>
         </div>

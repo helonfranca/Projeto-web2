@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
-    
+    <%@page import="model.Aluno" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +10,7 @@
     <title>Criar novo projeto</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="valida.js"></script>
+    <%Aluno aluno =(Aluno)session.getAttribute("user"); %>
 </head>
 <body>
     <div class="container">   <!--Caixa inteira...-->
@@ -18,7 +19,16 @@
             <h1 class="tituloheader">PERFIL <br> DO <br> ALUNO</h1>
         </header>
 
-        <div class="icone"><img style="height: 80px; width: 80px; padding-top: 20px;" src="iconprof.png"></div> <!--AVATAR-->
+        <div style="display: flex; align-items: center;flex-direction: column;">
+        	<h4>Bem vindo Aluno(a) <%= aluno.getNome()%></h4>
+        	<button onclick="redirecionar()">logout</button>
+        </div> <!--AVATAR-->
+        
+		<script>
+		    function redirecionar() {
+		        window.location.href = "logout.jsp";
+		    }
+		</script>
 
         <!--MENU-->
         <div class="MENU">
@@ -37,15 +47,30 @@
             <h1 class="title new project">Criar novo projeto</h1>
             <form class="form3" action="novoproj" method="post">
                     <div>  
-                    <label>Nome do projeto</label>                    
-                    <input class="box1" type="text" id="nome projeto" name="nome" required>
+                    	<label>Numero do projeto:</label>                    
+                    	<input class="box1" type="number" id="numero" name="numero" required>
                     </div>                  
                    
                     <div>
-                        <label>Numero do projeto</label>                                        
-                        <input class="box2" type="text" id="resumo projeto" name="numero" required>
+                        <label>Nome do projeto:</label>                                        
+                        <input class="box2" type="text" id="nomeprojeto" name="nomeprojeto" required>
                     </div>
                     
+                     <div>
+                        <label>Data Inicio:</label>                                        
+                        <input class="box2" type="date" id="date" name="date" required>
+                    </div>
+                    
+                     <div>
+                        <label>Horas semanais:</label>                                        
+                        <input class="box2" type="number" id="hrs_semanais" name="hrs_semanais" required>
+                    </div>
+                    
+                     <div>
+                        <label>Atribuições:</label>                                        
+                        <input class="box2" type="text" id="atribuicoeso" name="atribuicoes" required>
+                    </div>
+                    <br></br>
                     <div>
                         <input class="butao" type="submit" value="Enviar">
                     </div>

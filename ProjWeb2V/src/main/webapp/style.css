@@ -21,7 +21,10 @@
 
 /* Tela DIREITA - Nome das regiões ------------------------------------------------------*/
 
-.Formulario {grid-area: teladir;
+.Formulario {
+	overflow: auto;
+   max-height: 600px;
+	grid-area: teladir;
   border-left: 4px #167d7f solid;} /* A barrinha que separa as duas partes*/
 
 
@@ -472,14 +475,16 @@ div>.dentro_logo{
   /* Lista alunos */
   .lista {
     border-radius: 1em;
-    border: 2px solid grey;
-    width: 400px;
-    height: 400px;
-    box-sizing: border-box;
-    position: relative;
-    left: 200px;
-    top:50px;
+    border: 1px solid grey;
+    /* width: 400px; */
+    /* height: 400px; */
+    /* box-sizing: border-box; */
+    /* position: relative; */
+    /* left: 200px; */
+    /* top: 50px; */
     background: #9fc7aa;
+    margin-left: 10px;
+    margin-right: 10px;
     
   
   }
