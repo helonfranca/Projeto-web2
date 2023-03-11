@@ -49,18 +49,16 @@
 		    <div class="lista">
 		        <h1>Projetos</h1>
 					<ul>
-				    <% 
-				        for (ParticipacaoProjeto projeto : Aluno.getParticipacaoProjetos() ) { 
-				    %>
-				        <h3>Projeto: <%= projeto.getNome_projeto() %></h3>
-				        <li>Número do projeto: <%= projeto.getId() %></li>
-				        <% if (projeto.getProcesso_projeto().equals("Em espera")) { %>
-				            <li>Aprovação: Em andamento</li>
-				        <% } else { %>
-				            <li>Aprovação: OK</li>
-				        <% } %>
-				    <% } %>
-				</ul>
+					    <% for (ParticipacaoProjeto projeto : aluno.getParticipacaoProjetos()) { %>
+					        <li>
+					            <h3>Projeto: <%= projeto.getNome_projeto() %></h3>
+					            <ul>
+					                <li>Número do projeto: <%= projeto.getId() %></li>
+					                <li>Aprovação: <%= projeto.getProcesso_projeto().equals("Em espera") ? "Em andamento" : "OK" %></li>
+					            </ul>
+					        </li>
+					    <% } %>
+					</ul>
 		    </div>
 		</div>
         <!--Logo-->
