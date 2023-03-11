@@ -36,7 +36,7 @@
         <!--MENU-->
         <div class="MENU">
 
-            <div class="item2_menu"><a href="ListarProjetosC">Listar projetos</a></div>  
+			<div class="item2_menu"><a href="ListarProjetosC">Listar projetos</a></div>  
             <div class="item3_menu"><a href="novoaluno.html">EncerrarParticipação</a></div>
             <div class="item4_menu"><a href="novasatividades.html">Validar Participação</a></div>
             <div class="item5_menu"><a href="ListarAluno">Listar Alunos</a></div>
@@ -53,39 +53,19 @@
 	                   <ul>
     <%
         List<ParticipacaoProjeto> lista = (List<ParticipacaoProjeto>)request.getAttribute("projetos");
-        String aux = "x";
-    		for (ParticipacaoProjeto projeto : lista) { 
-        
+         		for (ParticipacaoProjeto projeto : lista) {       
         	
         	
     %>
-    	 <%if(projeto.getAluno() != aux){
-    %>
-    	<h1>Aluno <%= projeto.getAluno() %></h1>
     	
-    	<%} %>
-        <h3> <%= projeto.getNome_projeto() %></h3>
-        <li>Número do projeto: <%= projeto.getProcesso_projeto() %></li>
-        <li>Atribuicoes: <%= projeto.getAtribuicoes() %></li>
-         <li>Horas: <%= projeto.getHrs_semanais() %></li>
-         <li>Inicio da participação: <%= projeto.getInicio_participacao() %></li>
-        <%if(projeto.getAprovacao()){
-    %>
-        <li>Aprovacao:  Ok  </li>   
-        <%}else{ %>        
-                <li>Aprovacao:  Recusado  </li>   
-             	
-        	<%}%> 
-    
-    <%if(projeto.getFinalizada()){
-    %>
-        <li>Situação:  Ativo  </li>   
-        <%}else{ %>        
-                <li>Situação:  Encerrado  </li>   
-             	
-        	<%}%> 	
+    	<h1> <%= projeto.getNome_projeto() %></h1>
+    	<h3>Aluno <%= projeto.getAluno() %></h3>
         
-  <% aux = projeto.getAluno();} %>
+         <li>Horas: <%= projeto.getHrs_semanais() %></li>
+        
+	
+        
+  <% } %>
     </ul>
 		    </div>
 		</div>

@@ -69,4 +69,14 @@
     <servlet-name>ListarAluno</servlet-name>
     <url-pattern>/ListarAluno</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarProjetosC</display-name>
+    <servlet-name>ListarProjetosC</servlet-name>
+    <servlet-class>controller.ListarProjetosC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarProjetosC</servlet-name>
+    <url-pattern>/ListarProjetosC</url-pattern>
+  </servlet-mapping>
 </web-app>
