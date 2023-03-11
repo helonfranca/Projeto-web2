@@ -28,13 +28,13 @@ public class LoginServer extends HttpServlet {
 			if(request.getParameter("login").equals(dados.coordenacao.get(i).getLogin())) {
 				if(request.getParameter("password").equals(dados.coordenacao.get(i).getSenha())) {
 					session.setAttribute("user", dados.coordenacao.get(i));
-				    String url = response.encodeRedirectURL("/ProjWeb2V/ListarProjetoCoord.jsp");
+				    String url = response.encodeRedirectURL("/ProjWeb2V/ListarAluno");
 					response.setStatus(302);
 					response.setHeader("location", url);
 					
 				}
 			}
-			for(int j = 0; j < dados.coordenacao.size(); j++) {
+			for(int j = 0; j < dados.aluno.size(); j++) {
 				if(request.getParameter("login").equals(dados.aluno.get(j).getLogin())) {
 					if(request.getParameter("password").equals(dados.aluno.get(j).getSenha())) {
 						session.setAttribute("user", dados.aluno.get(j));

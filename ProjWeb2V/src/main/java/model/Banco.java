@@ -55,8 +55,8 @@ public class Banco{
 	}
 	 
 	 public void adddata() {
-			Aluno aluno1 = new Aluno("lucas", "lucas123", "123");
-			Aluno aluno2 = new Aluno("milena", "milena123", "123");
+			Aluno aluno1 = new Aluno("Lucas", "lucas123", "123");
+			Aluno aluno2 = new Aluno("Milena", "milena123", "123");
 			aluno.add(aluno1);
 			aluno.add(aluno2);
 			
@@ -64,6 +64,16 @@ public class Banco{
 			Coordenacao c2 = new Coordenacao("Juliana", "juliana123", "123");
 			coordenacao.add(c1);
 			coordenacao.add(c2);
+			
+			ParticipacaoProjeto p1 = new ParticipacaoProjeto("Projeto 1", "123", "02/05/2020","PHP, Phyton e JavaWeb", "Milena", "23");
+            ParticipacaoProjeto p2 = new ParticipacaoProjeto("Projeto 2", "456", "02/04/2020","C++, Phyton e JavaWeb", "Milena", "30");
+            ParticipacaoProjeto p3 = new ParticipacaoProjeto("Projeto 3", "789", "02/04/2020","Java, Phyton e JavaWeb", "Lucas", "40");
+            listaProj.add(p1);
+            listaProj.add(p2);
+            listaProj.add(p3);
+			
+			
+			
 		}
 	 
 	

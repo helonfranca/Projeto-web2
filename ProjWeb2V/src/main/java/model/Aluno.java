@@ -27,7 +27,7 @@ public class Aluno extends Usuario{
 		return this.participacao_projetos.remove(pp);
 	}
 	
-	public static List<ParticipacaoProjeto> getParticipacaoProjetos() {
+	public List<ParticipacaoProjeto> getParticipacaoProjetos() {
 		return participacao_projetos;
 	}
 	

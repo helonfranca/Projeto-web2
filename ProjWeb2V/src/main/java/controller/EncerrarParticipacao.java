@@ -38,9 +38,10 @@ public class EncerrarParticipacao extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(true);
 		
+		Aluno aluno = (Aluno) session.getAttribute("user");
 		
-		Aluno nome = (Aluno) session.getAttribute("user");
-		Banco banco = new Banco();
+		aluno.removerParticipacaoProjeto(null);
+		
 		
 		
 		

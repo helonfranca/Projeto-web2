@@ -59,4 +59,14 @@
     <servlet-name>EncerrarParticipacao</servlet-name>
     <url-pattern>/EncerrarParticipacao</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarAluno</display-name>
+    <servlet-name>ListarAluno</servlet-name>
+    <servlet-class>controller.ListarAluno</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarAluno</servlet-name>
+    <url-pattern>/ListarAluno</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -16,8 +16,38 @@ public class ParticipacaoProjeto {
 	private String aluno;
 	
 	private String hrs_semanais;
+	private Boolean aprovacao = false;   
+	
+	private Boolean finalizada = false;
+	
+	public ParticipacaoProjeto() {
+		
+	}
 
+	public ParticipacaoProjeto(String nome_projeto, String processo_projeto, String inicio_participacao, String atribuicoes, String aluno, String hrs_semanais){
+		this.nome_projeto = nome_projeto;         
+		this.processo_projeto = processo_projeto;         
+		this.inicio_participacao = inicio_participacao;         
+		this.atribuicoes = atribuicoes;         
+		this.aluno = aluno;         
+		this.hrs_semanais = hrs_semanais;     
+	}
+	
+	public Boolean getAprovacao() {
+        return aprovacao;
+    }
 
+    public void setAprovacao(Boolean aprovacao) {
+        this.aprovacao = aprovacao;
+    }
+
+    public Boolean getFinalizada() {
+        return finalizada;
+    }
+
+    public void setFinalizada(Boolean finalizada) {
+        this.finalizada = finalizada;
+    }
 	
 	public String getId() {
 		return id;
