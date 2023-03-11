@@ -26,7 +26,7 @@ public class NovoProj extends HttpServlet {
 
 		HttpSession session = request.getSession(true);
 
-		Aluno nome = (Aluno) session.getAttribute("user");
+		Aluno dadosAluno = (Aluno) session.getAttribute("user");
 		
 		String numProjeto = request.getParameter("numero");
 		String nomeProjeto = request.getParameter("nomeprojeto");
@@ -42,9 +42,15 @@ public class NovoProj extends HttpServlet {
 		projeto.setProcesso_projeto("Em espera");
 		projeto.setHrs_semanais(hrs_semanais);
 		projeto.setAtribuicoes(lista_Atribuicoes);
-		nome.getParticipacaoProjetos().add(projeto);
+		projeto.setAluno(dadosAluno.getNome());
+		
+		System.out.print(dadosAluno.getNome());
+		
+		dadosAluno.getParticipacaoProjetos().add(projeto);
+		System.out.print(dadosAluno.getParticipacaoProjetos());
 		
 		Banco banco = new  Banco();
+		
 		banco.adiciona(projeto);
 		
 		String url = response.encodeRedirectURL("/ProjWeb2V/CriarProj.jsp");
@@ -52,5 +58,4 @@ public class NovoProj extends HttpServlet {
 		response.setHeader("location", url);
 		
 	}
-
 }

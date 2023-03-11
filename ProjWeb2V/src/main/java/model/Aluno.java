@@ -7,7 +7,7 @@ import java.util.List;
 public class Aluno extends Usuario{
 	
 	private String matricula;
-	static List<ParticipacaoProjeto> participacao_projetos = new ArrayList<ParticipacaoProjeto>();
+	public  List<ParticipacaoProjeto> participacao_projetos = new ArrayList<ParticipacaoProjeto>();
 	
 	public Aluno(String nome, String login, String senha) {
 		super(nome, login, senha);
@@ -22,9 +22,6 @@ public class Aluno extends Usuario{
 		this.matricula = matricula;
 	}
 	
-	public boolean registrarParticipacaoProjeto(ParticipacaoProjeto pp) {
-		return Aluno.participacao_projetos.add(pp);
-	}
 	
 	public boolean removerParticipacaoProjeto(ParticipacaoProjeto pp) {
 		return this.participacao_projetos.remove(pp);
@@ -33,6 +30,7 @@ public class Aluno extends Usuario{
 	public List<ParticipacaoProjeto> getParticipacaoProjetos() {
 		return participacao_projetos;
 	}
+	
 	public void setParticipacaoProjetos(List<ParticipacaoProjeto> participacao) {
 		this.participacao_projetos = participacao;
 	}
